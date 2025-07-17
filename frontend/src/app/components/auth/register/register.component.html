@@ -1,0 +1,62 @@
+<p>register works!</p>
+
+<!-- 
+
+<div class="register-page">
+    <div class="sform">
+        <form #registrationForm="ngForm">
+            <h2>{{registrationForm.valid}}</h2>
+            <h2> Student Registration</h2>
+          
+            <input class="sinput" required minlength="4" maxlength="7" type="text" name="userName"
+                [(ngModel)]="student.userName" placeholder="Username" #userName="ngModel" />
+            <span class="error" *ngIf="userName.invalid && userName.touched">
+                <span *ngIf="userName.errors?.required">username is required</span>
+                <span *ngIf="userName.errors?.minlength ">username is should atleast 4 character</span>
+            </span>
+
+            <input type="number" name="age" min="4" max="10" [(ngModel)]="student.age" #age="ngModel" placeholder="age"
+                required />
+            <span class="error" *ngIf="age.invalid && age.touched">
+                <span *ngIf="age.errors?.required">Age is required</span>
+                <span *ngIf="age.errors?.min ">Age is should be atleast 4 </span>
+                <span *ngIf="age.errors?.max ">Age is should be maximum 10</span>
+            </span>
+
+            <input type="text" name="email" required [(ngModel)]="student.email"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #email="ngModel" placeholder="email id" />
+            <span class="error" *ngIf="email.invalid && email.touched">
+                <span *ngIf="email.errors?.required">Email is required</span>
+                <span *ngIf="email.errors?.pattern">please enter proper email</span>
+            </span>
+
+            <input type="password" name="password" required [(ngModel)]="student.password" placeholder=" password" />
+            <input type="password" name="confirmpassword" required [(ngModel)]="confirmpassword"
+                placeholder=" confirm password" />
+            <button [disabled]="!registrationForm.valid" (click)="registerStudent()">submit</button>
+            <button (click)="goToLogin()">login</button>
+        </form>
+    </div>
+</div> -->
+
+
+
+
+
+ <div class="register-page">
+    <div class="sform">
+        <form #registrationForm="ngForm">
+            <h2>{{registrationForm.valid}}</h2>
+            <h2> Student Registration</h2>
+              userNmae:<span class="required">*</span>
+            <input class="sinput" required minlength="4" maxlength="7" type="text" name="userName"
+                [(ngModel)]="student.userName" placeholder="Username" />
+            <!-- <input type="number" name="age" min="4" max="10" [(ngModel)]="student.age" placeholder="age" required /> -->
+            <input type="text" name="email" required [(ngModel)]="student.email" placeholder="email id" />
+            <input type="password" name="password" required [(ngModel)]="student.password" placeholder=" password" />
+            <input type="password" name="confirmpassword" required [(ngModel)]="confirmpassword"
+                placeholder=" confirm password" />
+            <button [disabled]="!registrationForm.valid" (click)="registerStudent()">submit</button>
+            <button (click)="goToLogin()">login</button>
+        </form>
+    </div>
+</div> 

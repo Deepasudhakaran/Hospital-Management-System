@@ -1,0 +1,18 @@
+<h3>ADD NEW DOCTORS</h3>
+
+<label>Doctor *</label><br>
+<input [(ngModel)]="doctor.name" placeholder="Enter name"><br><br>
+
+<label>Speciality *</label><br>
+<select [(ngModel)]="doctor.speciality">
+  <option value="">Select</option>
+  <option value="Cardiology">Cardiology</option>
+  <option value="Dermatology">Dermatology</option>
+  <option value="Pediatrics">Pediatrics</option>
+  <option value="Orthopedics">Orthopedics</option>
+  <option value="Neurology">Neurology</option>
+  <option value="Psychiatry">Psychiatry</option>
+</select><br><br>
+
+<button (click)="addDoctor()">{{ isEditMode ? 'Update' : 'Add' }}</button>
+

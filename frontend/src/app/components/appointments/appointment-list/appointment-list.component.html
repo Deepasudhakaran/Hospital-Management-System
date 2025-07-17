@@ -1,0 +1,28 @@
+<div>
+  <div class="pagination-container">
+    <h1 class="product-head">Appointments ({{appointments.length }})</h1>
+    <div class="pagination-button">
+      <button [disabled]="pageNumber==1" class="box" (click)="goToPreviousPage()">&lt;</button>
+      <button (click)="setPageSelected(page)" class="box" *ngFor="let page of pageNumberArray"
+        [ngClass]="{ 'selected': page == pageNumber }">
+        {{ page }}
+      </button>
+      <button [disabled]="pageNumber == totalNoOfPage" class="box" (click)="showNextItems()">&gt;</button>
+    </div>
+  </div>
+
+  <div *ngFor="let appointment of appointmentsToDisplay" class="patient-card">
+    <div class="patient-info">
+      <strong>Patient Name:</strong> {{ appointment.patient_name }}<br>
+      <strong>Doctor Name:</strong> {{ appointment.doctor_name }}<br>
+      <strong>Appointment Date:</strong> {{ appointment.date | date }}
+    </div>
+    <div class="patient-actions">
+      <button class="edit-btn" (click)="onEditClick(appointment)">Edit</button>
+      <button class="delete-btn" (click)="deleteAppointment(appointment._id)">Delete</button>
+    </div>
+  </div>
+
+</div>
+
+

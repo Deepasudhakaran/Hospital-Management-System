@@ -1,0 +1,12 @@
+
+<h3>ADD NEW APPOINTMENTS</h3>
+<label>Patient Name*</label><br>
+<input  [(ngModel)]="appointment.patient_name"  placeholder="Enter name"><br><br>
+
+<label>Doctor Name *</label><br>
+<input [(ngModel)]="appointment.doctor_name"  type="text" placeholder="Enter name"><br><br>
+
+<label>Appointment Date *</label><br>
+<input [(ngModel)]="appointment.date" type="date">
+
+<button (click)="addAppointment()">{{ isEditMode ? 'Update' : 'Add' }}</button>

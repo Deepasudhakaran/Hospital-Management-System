@@ -1,0 +1,74 @@
+.patient-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.patient-info {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.patient-actions {
+  display: flex;
+  gap: 10px;
+}
+.edit-btn {
+  padding: 6px 12px;
+  background-color: #0d6efd;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.delete-btn {
+  padding: 6px 12px;
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: #084dc0;
+}
+
+.delete-btn:hover {
+  background-color: #b02a37;
+}
+
+
+
+
+.box {
+  background-color: gray;
+  border: solid 1px black;
+  height: 30px;
+  width: 40px;
+  text-align: center;
+  line-height: 30px;
+  margin: 2px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.selected {
+  background-color: rgb(35, 196, 196);
+  color: black;
+}
+.product-head {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+  .box {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
