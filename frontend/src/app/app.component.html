@@ -1,23 +1,10 @@
 
+ <app-navbar></app-navbar>
+ <router-outlet></router-outlet> 
 
-<div class="navbar-container">
-    <!-- <h2 class="navbar-title">KIMS Hospital Management System</h2> -->
-  <nav class="navbar">
-    <div class="logo">KIMS Hospital Management System</div>
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    <ul class="nav-links">
-      <li><a routerLink="appointment">Appointments</a></li>
-      <li><a routerLink="doctor">Doctors</a></li>
-      <li><a routerLink="patient">Patient</a></li>
-      
-    </ul>
-  </nav>
-   <router-outlet></router-outlet>
-</div>
 
-<!-- 
+
 <app-login (loginSuccesEvent)="loginSucces($event)" (goToRegistrationEvent)="goToRegistration()"
     *ngIf="currentPage=='login'">
 </app-login>
-<app-registration (goToLoginEvent)="goToLogin()" *ngIf="currentPage=='register'"></app-registration> -->
+<app-register (goToLoginEvent)="goToLogin()" *ngIf="currentPage=='register'"></app-register> 
