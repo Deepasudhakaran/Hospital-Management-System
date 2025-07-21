@@ -12,36 +12,39 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegisterComponent {
 
-  student: User = {
+  user: User = {
     userName: '',
     email: '',
     password: '',
-  }
+  };
   confirmpassword: string = '';
-@Output() goToLoginEvent = new EventEmitter<string>();
-  constructor(private userService: UserService) {
 
-  }
+  @Output() goToLoginEvent = new EventEmitter<string>();
+  constructor(private userService: UserService) { }
 
-
-  registerStudent() {
-    console.log(this.student);
-    //add logic to check if user name exist
-    this.userService.checkIfStudentNameExist(this.student.userName).subscribe(result => {
-      if (result.length) {
-        alert("student name already exist")
-      } else {
-        alert("successfully registered")
-        this.userService.insertStudent(this.student).subscribe(result => {
-          console.log("result", result);
-        });
+  addUser() {
+    if (this.user.password !== this.confirmpassword) {
+      alert('Passwords do not match');
+      return;
+    }
+    this.userService.insertUser(this.user).subscribe({
+      next: (res) => {
+        console.log('User added:', res);
+        alert('Successfully registered!');
+        this.resetForm();
+        this.goToLogin()
+      },
+      error: (err) => {
+        console.error('Error adding user:', err);
       }
-    })
-
+    });
   }
 
-
-  goToLogin(){
-this.goToLoginEvent.emit();
+  resetForm() {
+    this.user = { userName: '', email: '', password: '' };
+    this.confirmpassword = '';
+  }
+  goToLogin() {
+    this.goToLoginEvent.emit();
   }
 }

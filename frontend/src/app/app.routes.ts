@@ -5,24 +5,10 @@ import { PatientComponent } from './components/patients/patient/patient.componen
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
 
 export const routes: Routes = [
-    {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-}, {
-    path: 'appointment',
-    component: AppointmentComponent
-}, {
-    path: 'doctor',
-    component: DoctorComponent
-},
-{
-    path: 'patient',
-    component: PatientComponent,      
-},
+
 {
     path: 'login',
     component: LoginComponent,      
@@ -32,12 +18,26 @@ export const routes: Routes = [
     component: RegisterComponent,      
 },
 {
-    path: 'home',
-    component: HomepageComponent,      
-},
-{
-    path: 'navbar',
-    component: NavbarComponent,      
-},
+    path: '',
+    component: MainLayoutComponent,  
+    children: [
+      {
+        path: 'home',
+        component: HomepageComponent
+      },
+      {
+        path: 'appointment',
+        component: AppointmentComponent
+      },
+      {
+        path: 'doctor',
+        component: DoctorComponent
+      },
+      {
+        path: 'patient',
+        component: PatientComponent
+      }
+    ]
+  }
 
 ];

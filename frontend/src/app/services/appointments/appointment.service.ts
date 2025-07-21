@@ -26,7 +26,4 @@ export class AppointmentService {
     return this.http.put(`${this.apiUrl}/updateAppointment/${id}`, appointment);
   }
 
-
-
-
 }

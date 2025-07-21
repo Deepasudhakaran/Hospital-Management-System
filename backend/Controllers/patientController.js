@@ -1,6 +1,6 @@
 const Patients = require('../models/patient.model');
 
-async function insertPatientDetails (req, res) {
+async function insertPatientDetails(req, res) {
   try {
     const patient = new Patients(req.body);
     const saved = await patient.save();
@@ -10,7 +10,7 @@ async function insertPatientDetails (req, res) {
   }
 };
 
-async function getPatientDetails (req, res) {
+async function getPatientDetails(req, res) {
   try {
     const patients = await Patients.find();
     res.status(200).json(patients);
@@ -39,5 +39,5 @@ async function updatePatientDetails(req, res) {
 };
 
 module.exports = {
-  insertPatientDetails,getPatientDetails, deletePatientDetails,updatePatientDetails
+  insertPatientDetails, getPatientDetails, deletePatientDetails, updatePatientDetails
 };

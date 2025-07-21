@@ -1,8 +1,6 @@
 <h3>ADD NEW DOCTORS</h3>
-
 <label>Doctor *</label><br>
 <input [(ngModel)]="doctor.name" placeholder="Enter name"><br><br>
-
 <label>Speciality *</label><br>
 <select [(ngModel)]="doctor.speciality">
   <option value="">Select</option>
@@ -15,4 +13,3 @@
 </select><br><br>
 
 <button (click)="addDoctor()">{{ isEditMode ? 'Update' : 'Add' }}</button>
-

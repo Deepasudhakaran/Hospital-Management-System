@@ -1,16 +1,17 @@
-
 .navbar-title {
   font-size: 28px;
   color: #00796b;
   margin-bottom: 30px;
   font-weight: bold;
 }
+
 .navbar-buttons {
   display: flex;
   justify-content: center;
   gap: 25px;
   margin-bottom: 40px;
 }
+
 .navbar-buttons button {
   background-color: #0097a7;
   color: white;
@@ -27,6 +28,7 @@
   background-color: #00796b;
   transform: scale(1.05);
 }
+
 button.active {
   background-color: #004d40;
 }
@@ -55,14 +57,14 @@ button.active {
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 24px;
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
   color: #00796b;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .nav-links {
@@ -78,7 +80,7 @@ button.active {
   border-radius: 4px;
   transition: background 0.3s;
   font-weight: bold;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .nav-links li a:hover {
@@ -110,7 +112,7 @@ button.active {
     margin-top: 10px;
   }
 
-  #menu-toggle:checked + .menu-icon + .nav-links {
+  #menu-toggle:checked+.menu-icon+.nav-links {
     display: flex;
   }
 
@@ -120,19 +122,8 @@ button.active {
   }
 }
 
-
-
-/* .logo {
-  font-size: 24px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  color: #1e90ff;
-} */
-
 .logo-img {
   width: 32px;
   height: 32px;
   margin-right: 8px;
 }
-

@@ -42,10 +42,11 @@ export class DoctorFormComponent {
       });
 
     } else {
-      this.doctorService.addDoctor(this.doctor).subscribe({
+      const { _id, ...doctorsToSend } = this.doctor; 
+      this.doctorService.addDoctor(doctorsToSend ).subscribe({
         next: (res) => {
           console.log('Doctor added:', res);
-          this.doctor = { name: '', speciality: '' ,_id: '',};
+          this.doctor = { name: '', speciality: '', _id: '', };
           alert('succesfully added')
         },
         error: (err) => {
@@ -54,7 +55,6 @@ export class DoctorFormComponent {
       });
     }
   }
-
   resetForm() {
     this.doctor = { name: '', speciality: '', _id: '', };
     this.isEditMode = false;

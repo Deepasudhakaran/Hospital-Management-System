@@ -1,27 +1,27 @@
-/* Form container */
 :host {
   display: block;
-  max-width: 400px; /* 👈 Limits the width */
+  max-width: 400px;
   padding: 20px;
-  margin: 0 auto; 
+  margin: 0 auto;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #fafafa;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
-/* Label styling */
 label {
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
 }
-h3{
-    text-align: center;
+
+h3 {
+  text-align: center;
 }
 
-/* Input and select styling */
-input, select {
+input,
+select {
   width: 100%;
   padding: 8px;
   margin-bottom: 15px;
@@ -30,7 +30,6 @@ input, select {
   font-size: 14px;
 }
 
-/* Button styling */
 button {
   padding: 10px 16px;
   background-color: #005eff;

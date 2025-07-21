@@ -3,37 +3,42 @@ import { UserService } from '../../../services/user/user.service';
 import { User } from '../../../interface/user';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  userName: string = '';
-  password: string = '';
+  user: User = {
+    userName: '',
+    email: '',
+    password: ''
+  };
+  constructor(private userService: UserService, private router: Router) { }
 
-  @Output() loginSuccesEvent = new EventEmitter<string>();
-  @Output() goToRegistrationEvent = new EventEmitter<string>();
+  authenticateUser() {
+    const { userName, password } = this.user;
 
-  constructor(private userService: UserService) {}
+    if (!userName || !password) {
+      alert('Please enter username and password.');
+      return;
+    }
 
-  authenticateStudent() {
-    console.log("userName", this.userName);
-    console.log("password", this.password);
-    this.userService.authenticateUser(this.userName, this.password)
-      .subscribe((result: User[]) => {
-        if (result.length) {
-          alert("login success");
-          this.loginSuccesEvent.emit(this.userName);
-        } else {
-          alert("authentication failed");
-        }
-      });
-  }
-
-  goToRegistration() {
-    this.goToRegistrationEvent.emit();
+    this.userService.authenticateUser(userName, password).subscribe((result: User[]) => {
+      if (result && result.length > 0) {
+        alert('Login successful!');
+        this.router.navigate(['/home']);
+      } else {
+        alert('Invalid credentials. Please try again.');
+      }
+    });
   }
 }
+
+
+
+
+

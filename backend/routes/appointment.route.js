@@ -1,4 +1,3 @@
-
 const express = require('express');
 const router = express.Router();
 const appointmentController = require('../Controllers/appointmentController');
@@ -9,3 +8,6 @@ router.delete('/deleteAppointment/:id', appointmentController.deleteAppointmentD
 router.put('/updateAppointment/:id', appointmentController.updateAppointmentDetails)
 
 module.exports = router;
+
+
+

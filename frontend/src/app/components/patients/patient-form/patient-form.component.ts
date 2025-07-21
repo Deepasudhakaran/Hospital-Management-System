@@ -40,7 +40,8 @@ export class PatientFormComponent {
         error: (err) => console.error(err)
       });
     } else {
-      this.patientService.addPatient(this.patient).subscribe({
+      const { _id, ...patientToSend } = this.patient; 
+      this.patientService.addPatient(patientToSend).subscribe({
         next: (res) => {
           console.log('patien added:', res);
           this.patient = { name: '', age: '', gender: '', _id: '', };

@@ -4,19 +4,18 @@ import { DoctorListComponent } from '../doctor-list/doctor-list.component';
 
 @Component({
   selector: 'app-doctor',
-  imports: [DoctorFormComponent,DoctorListComponent,],
+  imports: [DoctorFormComponent, DoctorListComponent,],
   templateUrl: './doctor.component.html',
   styleUrl: './doctor.component.css'
 })
 export class DoctorComponent {
 
-   selectedDoctor: any = null;
-
+  selectedDoctor: any = null;
   onEditDoctor(doctor: any) {
-    this.selectedDoctor = { ...doctor }; 
+    this.selectedDoctor = { ...doctor };
   }
 
   onDoctorSaved() {
-    this.selectedDoctor = null; 
+    this.selectedDoctor = null;
   }
 }

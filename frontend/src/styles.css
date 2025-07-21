@@ -2,3 +2,74 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+@media (max-width: 768px) {
+  div[style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  div[style*="width: 40%"],
+  div[style*="width: 50%"] {
+    width: 90% !important;
+    margin-bottom: 20px;
+  }
+
+  :host {
+    max-width: 90%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .patient-card {
+    padding: 12px;
+  }
+
+  .patient-info {
+    font-size: 14px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 600px) {
+  .pagination-button {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .box {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+    line-height: 28px;
+  }
+
+  .product-head {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  input,
+  select,
+  button {
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  button {
+    padding: 8px 12px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+}

@@ -44,15 +44,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
 .box {
   background-color: gray;
   border: solid 1px black;
@@ -81,53 +72,3 @@
     height: 30px;
     font-size: 14px;
   }
-
-
-/* 
-.pagination-button {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-}
-.box {
-  background-color: gray;
-  border: solid 1px black;
-  height: 36px;
-  width: 42px;
-  text-align: center;
-  line-height: 36px;
-  margin: 2px;
-  cursor: pointer;
-  color: white;
-  font-weight: bold;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-.box:hover:not(:disabled) {
-  background-color: #555;
-}
-
-.box:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-.selected {
-  background-color: rgb(35, 196, 196);
-  color: black;
-}
-@media (max-width: 600px) {
-  .product-head {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  .box {
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
-    font-size: 14px;
-  }
-  .pagination-button {
-    gap: 4px;
-  }
-} */

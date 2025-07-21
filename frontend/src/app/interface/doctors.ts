@@ -1,7 +1,4 @@
-
-
 export interface Doctors {
-    
     doctor: string,
-    speciality:string 
+    speciality: string
 }

@@ -5,23 +5,21 @@ import { DoctorService } from '../../../services/doctors/doctor.service';
 
 @Component({
   selector: 'app-doctor-list',
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './doctor-list.component.html',
   styleUrl: './doctor-list.component.css'
 })
 export class DoctorListComponent {
-
- doctors: any[] = [];
- doctorsToDisplay: any[] = [];
+  doctors: any[] = [];
+  doctorsToDisplay: any[] = [];
 
   pageNumber: number = 1;
   itemsPerPage: number = 3;
   totalNoOfPage: number = 0;
   pageNumberArray: number[] = [];
 
-
-   @Output() editDoctor = new EventEmitter<any>();
-  constructor(private doctorService: DoctorService) {}
+  @Output() editDoctor = new EventEmitter<any>();
+  constructor(private doctorService: DoctorService) { }
 
   ngOnInit(): void {
     this.fetchDoctors();
@@ -74,7 +72,7 @@ export class DoctorListComponent {
   deleteDoctor(id: string) {
     if (confirm('Are you sure you want to delete this doctor?')) {
       this.doctorService.deleteDoctor(id).subscribe(() => {
-        this.fetchDoctors(); 
+        this.fetchDoctors();
       });
     }
   }
