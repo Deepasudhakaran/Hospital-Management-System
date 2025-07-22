@@ -16,12 +16,11 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  authenticateUser(userName: string, password: string): Observable<User[]> {
-    const params = new HttpParams()
-      .set('userName', userName)
-      .set('password', password);
-    return this.http.get<User[]>(`${this.apiUrl}/userlogin`, { params });
+authenticateUser(userName: string, password: string): Observable<User> {
+    const body = { userName, password };
+    return this.http.post<User>(`${this.apiUrl}/userlogin`, body);
   }
+
 }
 
 

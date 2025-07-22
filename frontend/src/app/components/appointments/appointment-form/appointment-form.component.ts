@@ -48,6 +48,7 @@ export class AppointmentFormComponent {
       next: (res) => {
         console.log('Appointment added:', res);
         this.appointment = { patient_name: '', doctor_name: '', date: '', _id: '', };
+        alert('Successfully added');
       },
       error: (err) => {
         console.error('Error adding appointment:', err);

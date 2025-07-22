@@ -10,7 +10,6 @@ import { PatientService } from '../../../services/patients/patient.service';
   styleUrl: './patient-form.component.css'
 })
 export class PatientFormComponent {
-
   @Input() patientToEdit: any = null;
   @Output() patientSaved = new EventEmitter<void>();
 
@@ -33,7 +32,7 @@ export class PatientFormComponent {
     if (this.isEditMode) {
       this.patientService.updatePatient(this.patient._id, this.patient).subscribe({
         next: (res) => {
-          alert('patient details updated successfully');
+          alert('Patient details updated successfully');
           this.resetForm();
           this.patientSaved.emit();
         },
@@ -52,11 +51,9 @@ export class PatientFormComponent {
         }
       });
     }
-
   }
   resetForm() {
     this.patient = { name: '', _id: '', age: '', gender: '' };
     this.isEditMode = false;
   }
-
 }

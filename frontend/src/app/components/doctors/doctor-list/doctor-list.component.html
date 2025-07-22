@@ -2,12 +2,10 @@
   <h1 class="product-head">DOCTORS ({{ doctors.length }})</h1>
   <div class="pagination-button">
     <button [disabled]="pageNumber == 1" class="box" (click)="goToPreviousPage()">&lt;</button>
-
     <button *ngFor="let page of pageNumberArray" class="box" [ngClass]="{ 'selected': page === pageNumber }"
       (click)="setPageSelected(page)">
       {{ page }}
     </button>
-
     <button [disabled]="pageNumber === totalNoOfPage" class="box" (click)="showNextItems()">&gt;</button>
   </div>
 </div>

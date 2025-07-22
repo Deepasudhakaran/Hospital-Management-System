@@ -1,6 +1,6 @@
 <div>
   <div class="pagination-container">
-    <h1 class="product-head">Appointments ({{appointments.length }})</h1>
+    <h1 class="product-head">APPOINTMENTS ({{appointments.length }})</h1>
     <div class="pagination-button">
       <button [disabled]="pageNumber==1" class="box" (click)="goToPreviousPage()">&lt;</button>
       <button (click)="setPageSelected(page)" class="box" *ngFor="let page of pageNumberArray"
