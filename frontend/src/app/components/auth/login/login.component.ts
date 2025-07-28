@@ -19,26 +19,6 @@ export class LoginComponent {
   };
   constructor(private userService: UserService, private router: Router) { }
 
-  // authenticateUser() {
-  //   const { userName, password } = this.user;
-
-  //   if (!userName || !password) {
-  //     alert('Please enter username and password.');
-  //     return;
-  //   }
-
-  //   this.userService.authenticateUser(userName, password).subscribe((result: User[]) => {
-  //     if (result && result.length > 0) {
-  //       alert('Login successful!');
-  //       this.router.navigate(['/home']);
-  //     } else {
-  //       alert('Invalid credentials. Please try again.');
-  //     }
-  //   });
-  // }
-
-
-
 
   authenticateUser() {
     const { userName, password } = this.user;
@@ -52,7 +32,7 @@ export class LoginComponent {
       (result: User) => {
         if (result) {
           alert('Login successful!');
-          this.router.navigate(['/home']);
+          this.router.navigate(['/userHome']);
         } else {
           alert('Invalid credentials. Please try again.');
         }

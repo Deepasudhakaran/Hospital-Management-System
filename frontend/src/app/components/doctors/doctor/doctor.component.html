@@ -1,8 +1,18 @@
-<div style="display: flex; justify-content: space-around;">
-  <div style="width: 40%;">
-    <app-doctor-form [doctorToEdit]="selectedDoctor" (doctorSaved)="onDoctorSaved()"> </app-doctor-form>
+<div>
+  <div>
+    <section class="doctor-banner">
+      <div class="overlay fade-slide">
+        <h1>Doctors</h1>
+        <p class="breadcrumb">HOME &gt; DOCTORS</p>
+      </div>
+    </section>
   </div>
-  <div style="width: 50%;">
-    <app-doctor-list (editDoctor)="onEditDoctor($event)"></app-doctor-list>
+  <div style="display: flex; justify-content: space-around;">
+    <div class="fade-slide" style="width: 40%;">
+      <app-doctor-form [doctorToEdit]="selectedDoctor" (doctorSaved)="onDoctorSaved()"> </app-doctor-form>
+    </div>
+    <div class="fade-slide" style="width: 50%;">
+      <app-doctor-list (editDoctor)="onEditDoctor($event)"></app-doctor-list>
+    </div>
   </div>
 </div>

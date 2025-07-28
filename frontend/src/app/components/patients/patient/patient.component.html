@@ -1,8 +1,17 @@
+   <div>
+    <section class="patient-banner ">
+      <div class="overlay fade-slide">
+        <h1>Patients</h1>
+        <p class="breadcrumb">HOME &gt; PATIENTS</p>
+      </div>
+    </section>
+  </div>
+  
   <div style="display: flex; justify-content: space-around;">
-    <div style="width: 40%;">
+    <div class="fade-slide " style="width: 40%;">
       <app-patient-form [patientToEdit]="selectedPatient" (patientSaved)="onPatientSaved()"></app-patient-form>
     </div>
-    <div style="width: 50%;">
+    <div class="fade-slide "  style="width: 50%;">
       <app-patient-list (editPatient)="onEditPatient($event)"></app-patient-list>
     </div>
   </div>

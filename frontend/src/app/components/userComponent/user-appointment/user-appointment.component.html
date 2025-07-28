@@ -1,0 +1,66 @@
+<div>
+    <div>
+        <section class="main-banner">
+            <div class="overlay">
+                <h1>Appointment</h1>
+                <p class="breadcrumb">HOME &gt; APPOINTMENT</p>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section class="consultation-section">
+            <div class="consultation-container">
+                <div class="form-box">
+                    <h6>CONSULTATION</h6>
+                    <h2>Free Consultation</h2>
+                    <p>
+                        Far far away, behind the word mountains, far from the countries<br>
+                        Vokalia and Consonantia, there live the blind texts.
+                    </p>
+                    <form>
+  <div class="form-row">
+    <input [(ngModel)]="appointment.patient_name" name="patient_name" type="text" placeholder="First Name">
+    <input [(ngModel)]="appointment.age" name="age" type="number" placeholder="Age">
+  </div>
+  <div class="form-row">
+    <select [(ngModel)]="appointment.speciality" name="speciality" placeholder="select">
+      <option value="">Select Your Services</option>
+       <option>General Checkup</option>
+      <option value="Cardiology">Cardiology</option>
+      <option value="Dermatology">Dermatology</option>
+      <option value="Pediatrics">Pediatrics</option>
+      <option value="Orthopedics">Orthopedics</option>
+      <option value="Neurology">Neurology</option>
+      <option value="Psychiatry">Psychiatry</option>
+    </select>
+    <input [(ngModel)]="appointment.phone" name="phone" type="tel" placeholder="Phone">
+  </div>
+  <div class="form-row">
+    <input [(ngModel)]="appointment.date" name="date" type="date" placeholder="Date">
+    <input [(ngModel)]="appointment.time" name="time" type="time" placeholder="Time">
+  </div>
+  <button (click)="addAppointment()" type="submit" class="appointment-btn">Appointment</button>
+</form>
+                </div>
+                <div class="stats-box">
+                    <div class="stat-card">
+                        <h1>30</h1>
+                        <p>Years of<br>Experienced</p>
+                    </div>
+                    <div class="stat-card">
+                        <h1>4,500</h1>
+                        <p>Happy<br>Patients</p>
+                    </div>
+                    <div class="stat-card">
+                        <h1>84</h1>
+                        <p>Number of<br>Doctors</p>
+                    </div>
+                    <div class="stat-card">
+                        <h1>300</h1>
+                        <p>Number of<br>Staffs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

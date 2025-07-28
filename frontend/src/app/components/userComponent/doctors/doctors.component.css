@@ -1,0 +1,136 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  color: #444;
+}
+
+.doctor-banner {
+  background-image: url('https://www.keckmedicine.org/wp-content/uploads/2021/11/Medical-doctors-and-nurse-practitioners-discuss-paperwork-in-a-hallway.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  position: relative;
+}
+
+.doctor-banner .overlay {
+  background-color: rgba(37, 150, 255, 0.85); 
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.doctor-banner h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 0;
+}
+.doctor-banner .breadcrumb {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px;
+  gap: 20px;
+}
+
+.doctor-card {
+  width: 250px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.doctor-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  color: #1a75ff;
+}
+
+.doctor-card:nth-child(1) { animation-delay: 0.2s; }
+.doctor-card:nth-child(2) { animation-delay: 0.4s; }
+.doctor-card:nth-child(3) { animation-delay: 0.6s; }
+.doctor-card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.doctor-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.doctor-card img:hover {
+  transform: scale(1.05);
+  color: #1a75ff;
+}
+
+.doctor-card h2 {
+  font-size: 22px;
+  margin: 15px 0 5px;
+  color: #222;
+}
+
+.doctor-card h4 {
+  font-size: 14px;
+  color: #aaa;
+  margin: 5px 0 15px;
+  letter-spacing: 1px;
+}
+
+.doctor-card p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.social-icons {
+  margin: 10px 0;
+  animation: fadeInIcons 1s ease forwards;
+}
+
+@keyframes fadeInIcons {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.social-icons a {
+  margin: 0 8px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #ff6600;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #0056b3;
+  transform: translateY(-4px) scale(1.2);
+}

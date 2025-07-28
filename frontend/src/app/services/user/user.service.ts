@@ -9,16 +9,21 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  insertUser(user: User): Observable<any> {
-    return this.http.post(`${this.apiUrl}/insertUser`, user);
-  }
   private apiUrl = 'http://localhost:5000/users';
+  private userapiUrl = 'http://localhost:5000/users';
 
   constructor(private http: HttpClient) { }
 
-authenticateUser(userName: string, password: string): Observable<User> {
+  insertUser(user: User): Observable<any> {
+    return this.http.post(`${this.apiUrl}/insertUser`, user);
+  }
+  authenticateUser(userName: string, password: string): Observable<User> {
     const body = { userName, password };
     return this.http.post<User>(`${this.apiUrl}/userlogin`, body);
+  }
+
+  addAppointments(appointment: any): Observable<any> {
+    return this.http.post(`${this.userapiUrl}/userinsertAppointment`, appointment);
   }
 
 }

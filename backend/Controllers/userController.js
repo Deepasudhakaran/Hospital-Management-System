@@ -1,4 +1,5 @@
 const Users = require('../models/user.model');
+const Appointment = require('../models/appointment.model');
 const bcrypt = require('bcrypt');
 
 async function insertUserDetails(req, res) {
@@ -34,6 +35,20 @@ async function userLogin(req, res) {
   }
 }
 
+
+
+async function insertAppointmentDetails (req, res) {
+  try {
+    console.log('Received body:', req.body); 
+    const appointment = new Appointment(req.body);
+    const saved = await appointment.save();
+    res.status(201).json(saved);
+  } catch (err) {
+    console.error('Error saving appointment:', err.message);
+    res.status(400).json({ error: err.message });
+  }
+};
+
 module.exports = {
-  insertUserDetails, userLogin
+  insertUserDetails, userLogin,insertAppointmentDetails
 };

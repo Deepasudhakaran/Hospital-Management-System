@@ -1,6 +1,6 @@
 <div>
   <div class="pagination-container">
-    <h1 class="product-head">PATIENTS ({{ patients.length }})</h1>
+    <h3 class="product-head">Total Number Of Patients ({{ patients.length }})</h3>
     <div class="pagination-button">
       <button [disabled]="pageNumber==1" class="box" (click)="goToPreviousPage()">&lt;</button>
       <button (click)="setPageSelected(page)" class="box" *ngFor="let page of pageNumberArray"

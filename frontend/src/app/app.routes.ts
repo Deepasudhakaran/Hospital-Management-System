@@ -6,23 +6,32 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
+import { AppointmentPageComponent } from './pages/user/appointment-page/appointment-page.component';
+import { DoctorPageComponent } from './pages/user/doctor-page/doctor-page.component';
+import { UserHomePageComponent } from './pages/user/user-home-page/user-home-page.component';
+import { AboutPageComponent } from './pages/user/about-page/about-page.component';
+import { DepartmentPageComponent } from './pages/user/department-page/department-page.component';
+import { ContactPageComponent } from './pages/user/contact-page/contact-page.component';
 
 export const routes: Routes = [
 
-{
+  //  { path: '', 
+  //   redirectTo: 'userHome',
+  //    pathMatch: 'full' },
+  {
     path: 'login',
-    component: LoginComponent,      
-},
-{
+    component: LoginComponent,
+  },
+  {
     path: 'register',
-    component: RegisterComponent,      
-},
-{
+    component: RegisterComponent,
+  },
+  {
     path: '',
-    component: MainLayoutComponent,  
+    component: MainLayoutComponent,
     children: [
       {
-        path: 'home',
+        path: '',
         component: HomepageComponent
       },
       {
@@ -38,6 +47,30 @@ export const routes: Routes = [
         component: PatientComponent
       }
     ]
-  }
+  },
 
+    {
+    path: 'userHome',
+    component: UserHomePageComponent,
+  },
+  {
+    path: 'about',
+    component: AboutPageComponent,
+  },
+  {
+    path: 'userappointment',
+    component: AppointmentPageComponent,
+  },
+  {
+    path: 'department',
+    component: DepartmentPageComponent,
+  },
+  {
+    path: 'userdoctors',
+    component: DoctorPageComponent
+  },
+   {
+    path: 'contact',
+    component: ContactPageComponent
+  }
 ];

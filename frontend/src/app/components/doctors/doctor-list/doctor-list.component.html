@@ -1,5 +1,5 @@
 <div class="pagination-container">
-  <h1 class="product-head">DOCTORS ({{ doctors.length }})</h1>
+  <h3 class="product-head">Total Number Of Doctors ({{ doctors.length }})</h3>
   <div class="pagination-button">
     <button [disabled]="pageNumber == 1" class="box" (click)="goToPreviousPage()">&lt;</button>
     <button *ngFor="let page of pageNumberArray" class="box" [ngClass]="{ 'selected': page === pageNumber }"
@@ -10,12 +10,12 @@
   </div>
 </div>
 
-<div *ngFor="let doctor of doctorsToDisplay" class="patient-card">
-  <div class="patient-info">
+<div *ngFor="let doctor of doctorsToDisplay" class="doctor-card">
+  <div class="doctor-info">
     <strong>Name:</strong> {{ doctor.name }}<br>
     <strong>Speciality:</strong> {{ doctor.speciality }}<br>
   </div>
-  <div class="patient-actions">
+  <div class="doctor-actions">
     <button class="delete-btn" (click)="deleteDoctor(doctor._id)">Delete</button>
     <button class="edit-btn" (click)="onEditClick(doctor)">Edit</button>
   </div>

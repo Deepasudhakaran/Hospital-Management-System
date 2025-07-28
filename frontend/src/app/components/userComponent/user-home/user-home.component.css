@@ -1,0 +1,270 @@
+
+ .slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 90vh;
+  margin-bottom: -100px; 
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  animation: slide 10s infinite;
+}
+
+.slide {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  flex-shrink: 0;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  position: relative;
+}
+
+.slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.slide h1 {
+  font-size: 3rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.slide h1 span {
+  color: #1e90ff;
+}
+
+.slide p {
+  font-size: 1.1rem;
+  margin: 15px 0;
+}
+
+.slide a {
+  padding: 12px 24px;
+  background-color: orange;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+
+  40% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-100%);
+  }
+
+  90% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.services-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 50px 0;
+  animation: fadeIn 1s ease-in-out;
+   
+}
+
+.service-box {
+   background: linear-gradient(to right, #359af5, #027bfc); 
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  text-align: center;
+  width: 22%;
+  gap: 100px;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  margin: 10px;
+  border-radius: 8px;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: slideUpFade 0.8s ease forwards;
+  animation-delay: var(--delay);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:nth-child(1) { --delay: 0.1s; }
+.service-box:nth-child(2) { --delay: 0.3s; }
+.service-box:nth-child(3) { --delay: 0.5s; }
+.service-box:nth-child(4) { --delay: 0.7s; }
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.icon-circle {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  transition: transform 0.5s ease;
+}
+
+.service-box:hover .icon-circle {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.service-box h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.service-box p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUpFade {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .service-box {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-box {
+    width: 90%;
+  }
+}
+
+.why-drcare {
+  padding: 60px 40px;
+  background-color: #b6ddff;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.left-column {
+  flex: 1 1 45%;
+}
+
+.left-column h4 {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.left-column h1 {
+  font-size: 38px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  font-size: 16px;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.video-btn {
+  background: white;
+  border: 2px solid black;
+}
+
+.locate-btn {
+  background: #f2f2f2;
+}
+
+.right-column {
+  flex: 1 1 45%;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+  border-top: 1px solid #ddd;
+  padding-top: 40px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+  margin: 10px 20px;
+}
+
+.stat h2 {
+  font-size: 32px;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.stat p {
+  font-size: 16px;
+  color: #666;
+}

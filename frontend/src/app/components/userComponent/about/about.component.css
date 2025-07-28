@@ -1,0 +1,91 @@
+.main-banner {
+  background-image: url('https://www.keckmedicine.org/wp-content/uploads/2021/11/Medical-doctors-and-nurse-practitioners-discuss-paperwork-in-a-hallway.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  position: relative;
+}
+
+.main-banner .overlay {
+  background-color: rgba(37, 150, 255, 0.85); 
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.main-banner h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 0;
+  color: white;
+}
+.main-banner .breadcrumb {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  gap: 50px;
+}
+.left img {
+  width: 400px;
+  border-radius: 8px;
+}
+.right {
+  max-width: 700px;
+}
+.subheading {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 32px;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #666;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 50px;
+  margin-top: 30px;
+}
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  border: 2px solid #007bff;
+  padding: 15px;
+  border-radius: 10px;
+}
+.icon {
+  font-size: 24px;
+  color: #007bff;
+  border: 2px solid #007bff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
