@@ -68,7 +68,6 @@ export class DoctorListComponent {
     this.updateDoctorsToDisplay();
   }
 
-
   deleteDoctor(id: string) {
     if (confirm('Are you sure you want to delete this doctor?')) {
       this.doctorService.deleteDoctor(id).subscribe(() => {
@@ -80,7 +79,6 @@ export class DoctorListComponent {
   onEditClick(doctor: any) {
     this.editDoctor.emit(doctor);
   }
-
 }
 
 

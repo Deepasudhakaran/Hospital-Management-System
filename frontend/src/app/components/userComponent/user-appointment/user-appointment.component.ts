@@ -20,8 +20,7 @@ export class UserAppointmentComponent {
     date: '',
     age:'',
     phone:'',
-    speciality:'',
-    time: ''
+    speciality:''
   };
 
   isEditMode = false;
@@ -39,7 +38,7 @@ export class UserAppointmentComponent {
     this.appointmentService.addAppointments(appointmentToSend).subscribe({
       next: (res) => {
         console.log('Appointment added:', res);
-        this.appointment = {   _id :'', patient_name: '', doctor_name: '', date: '', age:'', speciality:'', time: '' ,phone:''};
+        this.appointment = {   _id :'', patient_name: '', doctor_name: '', date: '', age:'', speciality:'', phone:''};
         alert('Successfully added');
       },
       error: (err) => {
@@ -49,7 +48,7 @@ export class UserAppointmentComponent {
   
 }
 resetForm() {
-  this.appointment = {   _id :'', patient_name: '', doctor_name: '', date: '', age:'', speciality:'', time: '',phone:'' };
+  this.appointment = {   _id :'', patient_name: '', doctor_name: '', date: '', age:'', speciality:'', phone:'' };
   this.isEditMode = false;
 }
 }

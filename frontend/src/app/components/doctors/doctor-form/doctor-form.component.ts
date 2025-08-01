@@ -21,7 +21,6 @@ export class DoctorFormComponent {
   };
 
   isEditMode = false;
-
   constructor(private doctorService: DoctorService) { }
   ngOnChanges(changes: SimpleChanges) {
     if (changes['doctorToEdit'] && this.doctorToEdit) {
@@ -42,8 +41,8 @@ export class DoctorFormComponent {
       });
 
     } else {
-      const { _id, ...doctorsToSend } = this.doctor; 
-      this.doctorService.addDoctor(doctorsToSend ).subscribe({
+      const { _id, ...doctorsToSend } = this.doctor;
+      this.doctorService.addDoctor(doctorsToSend).subscribe({
         next: (res) => {
           console.log('Doctor added:', res);
           this.doctor = { name: '', speciality: '', _id: '', };

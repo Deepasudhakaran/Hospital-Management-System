@@ -12,6 +12,9 @@ import { UserHomePageComponent } from './pages/user/user-home-page/user-home-pag
 import { AboutPageComponent } from './pages/user/about-page/about-page.component';
 import { DepartmentPageComponent } from './pages/user/department-page/department-page.component';
 import { ContactPageComponent } from './pages/user/contact-page/contact-page.component';
+import { authGuard } from './guards/auth.guard';
+import { AdministrationloginComponent } from './components/auth/administrationlogin/administrationlogin.component';
+import { adminauthGuard } from './guards/adminauth.guard';
 
 export const routes: Routes = [
 
@@ -23,15 +26,20 @@ export const routes: Routes = [
     component: LoginComponent,
   },
   {
+    path: 'administration',
+    component: AdministrationloginComponent,
+  },
+  {
     path: 'register',
     component: RegisterComponent,
   },
   {
-    path: '',
+    path: 'home',
     component: MainLayoutComponent,
+    canActivate: [adminauthGuard],
     children: [
       {
-        path: '',
+        path: 'home',
         component: HomepageComponent
       },
       {
@@ -49,9 +57,10 @@ export const routes: Routes = [
     ]
   },
 
-    {
-    path: 'userHome',
+  {
+    path: '',
     component: UserHomePageComponent,
+
   },
   {
     path: 'about',
@@ -60,6 +69,7 @@ export const routes: Routes = [
   {
     path: 'userappointment',
     component: AppointmentPageComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'department',
@@ -69,7 +79,7 @@ export const routes: Routes = [
     path: 'userdoctors',
     component: DoctorPageComponent
   },
-   {
+  {
     path: 'contact',
     component: ContactPageComponent
   }

@@ -1,9 +1,8 @@
-
 const Appointment = require('../models/appointment.model');
 
 exports.insertAppointmentDetails = async (req, res) => {
   try {
-    console.log('Received body:', req.body); 
+    console.log('Received body:', req.body);
     const appointment = new Appointment(req.body);
     const saved = await appointment.save();
     res.status(201).json(saved);
@@ -12,7 +11,6 @@ exports.insertAppointmentDetails = async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 };
-
 
 exports.getAppointmentDetails = async (req, res) => {
   try {
@@ -31,7 +29,6 @@ exports.deleteAppointmentDetails = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 }
-
 
 exports.updateAppointmentDetails = async (req, res) => {
   try {

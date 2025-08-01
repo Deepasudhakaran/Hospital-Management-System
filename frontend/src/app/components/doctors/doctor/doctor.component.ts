@@ -9,8 +9,8 @@ import { DoctorListComponent } from '../doctor-list/doctor-list.component';
   styleUrl: './doctor.component.css'
 })
 export class DoctorComponent {
-
   selectedDoctor: any = null;
+  
   onEditDoctor(doctor: any) {
     this.selectedDoctor = { ...doctor };
   }

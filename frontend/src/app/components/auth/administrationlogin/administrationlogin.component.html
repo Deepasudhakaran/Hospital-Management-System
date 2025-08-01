@@ -1,8 +1,7 @@
 <div class="container">
   <div class="login-box">
     <div class="form-section">
-      <h1>LOGIN PAGE</h1>
-      <!-- <p>Hey, welcome back to your special place</p> -->
+      <h1> Administration Login Page</h1>
       <form #loginForm="ngForm" (ngSubmit)="authenticateUser()">
         <input type="text" placeholder="Enter your username" required name="userName" [(ngModel)]="user.userName"
           #userName="ngModel" />
@@ -17,12 +16,8 @@
         <button type="submit" class="signin-btn" [disabled]="loginForm.invalid">
           Login
         </button>
-        <p class="signup-link">
-          Don't have an account? <a href="register">Register</a>
-        </p>
       </form>
     </div>
-
     <div class="illustration-section">
       <img src="https://www.smarteach.com/wp-content/uploads/2014/11/1_282.jpg" alt="Login Illustration" />
     </div>

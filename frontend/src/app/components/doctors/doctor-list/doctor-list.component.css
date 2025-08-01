@@ -17,7 +17,6 @@
   display: flex;
   gap: 10px;
 }
-
 .edit-btn {
   padding: 6px 12px;
   background-color: #0d6efd;
@@ -35,11 +34,9 @@
   border-radius: 4px;
   cursor: pointer;
 }
-
 .edit-btn:hover {
   background-color: #084dc0;
 }
-
 .delete-btn:hover {
   background-color: #b02a37;
 }
@@ -75,7 +72,6 @@
   display: flex;
   flex-wrap: wrap;
 }
-
 
 .box:hover:not(:disabled) {
   background-color: #555;

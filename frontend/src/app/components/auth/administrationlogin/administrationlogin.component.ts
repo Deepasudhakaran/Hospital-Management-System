@@ -1,23 +1,22 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { UserService } from '../../../services/user/user.service';
+import { Component } from '@angular/core';
+import { AdministrationService } from '../../../services/administration/administration.service';
 import { User } from '../../../interface/user';
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-administrationlogin',
   imports: [FormsModule, CommonModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './administrationlogin.component.html',
+  styleUrl: './administrationlogin.component.css'
 })
-export class LoginComponent {
-  user: User = {
+export class AdministrationloginComponent {
+  user = {
     userName: '',
-    email: '',
     password: ''
   };
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private administractionService: AdministrationService, private router: Router) { }
 
   authenticateUser() {
     const { userName, password } = this.user;
@@ -27,12 +26,12 @@ export class LoginComponent {
       return;
     }
 
-    this.userService.authenticateUser(userName, password).subscribe(
+    this.administractionService.authenticateUser(userName, password).subscribe(
       (result: User) => {
         if (result) {
           alert('Login successful!');
-          localStorage.setItem('userLoggedIn', 'true');
-          this.router.navigate(['/']);
+          localStorage.setItem('adminitrationLoggedIn', 'true');
+          this.router.navigate(['/home/home']);
         } else {
           alert('Invalid credentials. Please try again.');
         }
@@ -44,8 +43,3 @@ export class LoginComponent {
     );
   }
 }
-
-
-
-
-

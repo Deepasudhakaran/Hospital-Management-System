@@ -19,7 +19,6 @@ async function getPatientDetails(req, res) {
   }
 };
 
-
 async function deletePatientDetails(req, res) {
   try {
     await Patients.findByIdAndDelete(req.params.id);
@@ -27,7 +26,7 @@ async function deletePatientDetails(req, res) {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
-}
+};
 
 async function updatePatientDetails(req, res) {
   try {

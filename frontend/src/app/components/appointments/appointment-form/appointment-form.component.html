@@ -7,6 +7,22 @@
         <label>Doctor Name *</label><br>
         <input [(ngModel)]="appointment.doctor_name" type="text" placeholder="Enter name"><br><br>
 
+        <label>Age *</label><br>
+        <input [(ngModel)]="appointment.age" name="age" type="number" placeholder="Age"><br><br>
+
+        <label>Speciality *</label><br>
+        <select [(ngModel)]="appointment.speciality" name="speciality" placeholder="select">
+            <option value="">Select Your Services</option>
+            <option>General Checkup</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Dermatology">Dermatology</option>
+            <option value="Pediatrics">Pediatrics</option>
+            <option value="Orthopedics">Orthopedics</option>
+            <option value="Neurology">Neurology</option>
+            <option value="Psychiatry">Psychiatry</option>
+        </select><br><br>
+        <label>Phone No *</label><br>
+        <input [(ngModel)]="appointment.phone" name="phone" type="tel" placeholder="Phone"><br><br>
         <label>Appointment Date *</label><br>
         <input [(ngModel)]="appointment.date" type="date">
 

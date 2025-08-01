@@ -18,6 +18,9 @@ export class AppointmentFormComponent {
     _id: '',
     patient_name: '',
     doctor_name: '',
+    speciality: '',
+    phone: '',
+    age: '',
     date: ''
   };
 
@@ -32,34 +35,32 @@ export class AppointmentFormComponent {
   }
 
   addAppointment() {
-  if (this.isEditMode) {
-    this.appointmentService.updateAppointment(this.appointment._id, this.appointment).subscribe({
-      next: (res) => {
-        alert('Appointment updated successfully');
-        this.resetForm();
-        this.appointmentSaved.emit();
-      },
-      error: (err) => console.error(err)
-    });
-  } else {
-    const { _id, ...appointmentToSend } = this.appointment; 
+    if (this.isEditMode) {
+      this.appointmentService.updateAppointment(this.appointment._id, this.appointment).subscribe({
+        next: (res) => {
+          alert('Appointment updated successfully');
+          this.resetForm();
+          this.appointmentSaved.emit();
+        },
+        error: (err) => console.error(err)
+      });
+    } else {
+      const { _id, ...appointmentToSend } = this.appointment;
 
-    this.appointmentService.addAppointments(appointmentToSend).subscribe({
-      next: (res) => {
-        console.log('Appointment added:', res);
-        this.appointment = { patient_name: '', doctor_name: '', date: '', _id: '', };
-        alert('Successfully added');
-      },
-      error: (err) => {
-        console.error('Error adding appointment:', err);
-      }
-    });
+      this.appointmentService.addAppointments(appointmentToSend).subscribe({
+        next: (res) => {
+          console.log('Appointment added:', res);
+          this.appointment = { patient_name: '', doctor_name: '', speciality: '', phone: '', date: '', _id: '', age: '' };
+          alert('Successfully added');
+        },
+        error: (err) => {
+          console.error('Error adding appointment:', err);
+        }
+      });
+    }
   }
-}
-
-
   resetForm() {
-    this.appointment = { _id: '', patient_name: '', doctor_name: '', date: '' };
+    this.appointment = { _id: '', patient_name: '', doctor_name: '', speciality: '', phone: '', date: '', age: '' };
     this.isEditMode = false;
   }
 }

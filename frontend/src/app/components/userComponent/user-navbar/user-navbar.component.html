@@ -6,8 +6,8 @@
         📍
       </div>
       <div>
-        <div>Address: perithalmanna,</div>
-        <div>malappuram, kerala</div>
+        <div>Address: Kochi,</div>
+        <div>Kerala, INDIA</div>
       </div>
     </div>
     <div class="info-item">
@@ -15,7 +15,7 @@
         📧
       </div>
       <div>
-        Email: Dr.caregmail.com
+        Email: Dr.care&#64;gmail.com
       </div>
     </div>
     <div class="info-item">
@@ -33,12 +33,16 @@
   <label for="menu-toggle" class="menu-icon">&#9776;</label>
 
   <ul class="nav-links">
-    <li><a href="userHome">HOME</a></li>
+    <li><a href="">HOME</a></li>
     <li><a href="about">ABOUT</a></li>
     <li><a href="userdoctors">DOCTOR</a></li>
     <li><a href="department">DEPARTMENTS</a></li>
     <li><a href="contact">CONTACT</a></li>
   </ul>
-  
-  <button class="appointment-btn" routerLink="/userappointment">Make An Appointment</button>
+  <div class="nav-buttons">
+    <button class="appointment-btn" routerLink="/userappointment">Make An Appointment</button>
+    <button [ngClass]="isLoggedIn ? 'logout-btn' : 'login-btn'" (click)="isLoggedIn ? logout() : login()">
+      {{ isLoggedIn ? 'Logout' : 'Login' }}
+    </button>
+  </div>
 </div>

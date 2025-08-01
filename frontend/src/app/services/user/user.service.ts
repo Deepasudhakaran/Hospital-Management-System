@@ -26,6 +26,9 @@ export class UserService {
     return this.http.post(`${this.userapiUrl}/userinsertAppointment`, appointment);
   }
 
+ checkIfUserLoggedIn(): boolean {
+  return localStorage.getItem('userLoggedIn') === 'true'; 
+}
 }
 
 

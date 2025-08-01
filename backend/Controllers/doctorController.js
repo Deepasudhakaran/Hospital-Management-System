@@ -1,4 +1,3 @@
-
 const Doctors = require('../models/doctor.model');
 
 async function insertDoctorDetails(req, res) {
@@ -10,7 +9,6 @@ async function insertDoctorDetails(req, res) {
     res.status(400).json({ error: err.message });
   }
 }
-
 async function getDoctorDetails(req, res) {
   try {
     const doctors = await Doctors.find();

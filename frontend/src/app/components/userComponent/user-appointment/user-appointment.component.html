@@ -18,29 +18,31 @@
                         Vokalia and Consonantia, there live the blind texts.
                     </p>
                     <form>
-  <div class="form-row">
-    <input [(ngModel)]="appointment.patient_name" name="patient_name" type="text" placeholder="First Name">
-    <input [(ngModel)]="appointment.age" name="age" type="number" placeholder="Age">
-  </div>
-  <div class="form-row">
-    <select [(ngModel)]="appointment.speciality" name="speciality" placeholder="select">
-      <option value="">Select Your Services</option>
-       <option>General Checkup</option>
-      <option value="Cardiology">Cardiology</option>
-      <option value="Dermatology">Dermatology</option>
-      <option value="Pediatrics">Pediatrics</option>
-      <option value="Orthopedics">Orthopedics</option>
-      <option value="Neurology">Neurology</option>
-      <option value="Psychiatry">Psychiatry</option>
-    </select>
-    <input [(ngModel)]="appointment.phone" name="phone" type="tel" placeholder="Phone">
-  </div>
-  <div class="form-row">
-    <input [(ngModel)]="appointment.date" name="date" type="date" placeholder="Date">
-    <input [(ngModel)]="appointment.time" name="time" type="time" placeholder="Time">
-  </div>
-  <button (click)="addAppointment()" type="submit" class="appointment-btn">Appointment</button>
-</form>
+                        <div class="form-row">
+                            <input [(ngModel)]="appointment.patient_name" name="patient_name" type="text"
+                                placeholder="Enter Name">
+                            <input [(ngModel)]="appointment.age" name="age" type="number" placeholder="Age">
+                        </div>
+                        <div class="form-row">
+                            <select [(ngModel)]="appointment.speciality" name="speciality" placeholder="select">
+                                <option value="">Select Your Services</option>
+                                <option>General Checkup</option>
+                                <option value="Cardiology">Cardiology</option>
+                                <option value="Dermatology">Dermatology</option>
+                                <option value="Pediatrics">Pediatrics</option>
+                                <option value="Orthopedics">Orthopedics</option>
+                                <option value="Neurology">Neurology</option>
+                                <option value="Psychiatry">Psychiatry</option>
+                            </select>
+                            <input [(ngModel)]="appointment.doctor_name " name="doctor_name " type="text"
+                                placeholder="Doctor Name (optional)">
+                        </div>
+                        <div class="form-row">
+                            <input [(ngModel)]="appointment.date" name="date" type="date" placeholder="Date">
+                            <input [(ngModel)]="appointment.phone" name="phone" type="tel" placeholder="Phone">
+                        </div>
+                        <button (click)="addAppointment()" type="submit" class="appointment-btn">Appointment</button>
+                    </form>
                 </div>
                 <div class="stats-box">
                     <div class="stat-card">

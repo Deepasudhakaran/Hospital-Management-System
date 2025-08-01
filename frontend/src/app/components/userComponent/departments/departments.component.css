@@ -29,6 +29,7 @@
   font-weight: 500;
   letter-spacing: 1px;
 }
+
 .container {
   padding: 40px;
   max-width: 1200px;
@@ -52,6 +53,7 @@ h1 {
   margin: 20px 0;
   transition: box-shadow 0.3s ease;
 }
+
 .search-bar:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -79,37 +81,90 @@ h1 {
 }
 
 .card {
-   background-color: #fff;
+  background-color: #fff;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
-  animation: fadeSlideIn 0.6s ease-out forwards;
   opacity: 0;
+  animation: slideUpFade 0.8s ease forwards;
+  animation-delay: var(--delay);
+}
+
+
+.card:nth-child(1) {
+  --delay: 0.1s;
+}
+
+.card:nth-child(2) {
+  --delay: 0.3s;
+}
+
+.card:nth-child(3) {
+  --delay: 0.5s;
+}
+
+.card:nth-child(4) {
+  --delay: 0.6s;
+}
+
+.card:nth-child(5) {
+  --delay: 0.6s;
+}
+
+.card:nth-child(6) {
+  --delay: 0.7s;
+}
+
+.card:nth-child(7) {
+  --delay: 0.8s;
+}
+
+.card:nth-child(8) {
+  --delay: 0.9s;
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpFade {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .card:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   background-color: #f5faff;
 }
+
 .card .icon {
   font-size: 30px;
   color: rgba(37, 150, 255, 0.85);
   margin-bottom: 15px;
   align-items: center;
-
 }
+
 .load-more {
   text-align: center;
   margin: 2rem 0;
 }
 
 .load-more a {
- 
   font-weight: bold;
   font-size: 1.1rem;
-   display: inline-block;
+  display: inline-block;
   margin: 30px auto 0;
   text-decoration: none;
   background-color: #007BFF;
@@ -159,16 +214,19 @@ h1 {
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
+
 .icon,
 .card-icon {
   font-size: 30px;
@@ -181,9 +239,11 @@ h1 {
 .card:hover .card-icon {
   transform: scale(1.2) rotate(5deg);
 }
+
 .card:hover .learn-more {
   gap: 10px;
 }
+
 .load-more a:hover {
   background-color: #0056b3;
   transform: translateY(-2px);
@@ -194,6 +254,7 @@ h1 {
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -205,6 +266,7 @@ h1 {
   transform: translateY(30px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card.show {
   animation: fadeSlideIn 0.6s ease-out forwards;
 }

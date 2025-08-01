@@ -43,6 +43,7 @@
 .delete-btn:hover {
   background-color: #b02a37;
 }
+
 .box {
   background-color: gray;
   border: solid 1px black;
@@ -56,9 +57,9 @@
   font-weight: bold;
   border-radius: 4px;
   width: 30px;
-    height: 30px;
-    font-size: 14px;
-    transition: background-color 0.3s;
+  height: 30px;
+  font-size: 14px;
+  transition: background-color 0.3s;
 }
 
 .selected {
@@ -70,7 +71,7 @@
   text-align: center;
   margin-bottom: 20px;
   margin-top: 50px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .pagination-button {
