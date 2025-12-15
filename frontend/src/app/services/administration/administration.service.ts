@@ -7,7 +7,7 @@ import { User } from '../../interface/user';
   providedIn: 'root'
 })
 export class AdministrationService {
-  private apiUrl = 'http://localhost:5000/users';
+  private apiUrl = 'https://hospital-management-system-backend-135p.onrender.com';
 
   constructor(private http: HttpClient) { }
 
