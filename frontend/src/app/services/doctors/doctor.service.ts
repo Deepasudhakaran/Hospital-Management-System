@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DoctorService {
-  private apiUrl = 'https://hospital-management-system-backend-135p.onrender.com';
+  private apiUrl = 'https://hospital-management-system-backend-135p.onrender.com/doctors';
 
   constructor(private http: HttpClient) { }
 
