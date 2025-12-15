@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private apiUrl = 'http://localhost:5000/users';
-  private userapiUrl = 'http://localhost:5000/users';
+  private apiUrl = 'https://hospital-management-system-backend-135p.onrender.com/users';
+  private userapiUrl = 'https://hospital-management-system-backend-135p.onrender.com/users';
 
   constructor(private http: HttpClient) { }
 
